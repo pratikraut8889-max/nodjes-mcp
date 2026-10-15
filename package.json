@@ -1,0 +1,33 @@
+{
+  "name": "nodejs-mcp",
+  "version": "1.0.1",
+  "description": "A Node.js MCP server for querying and updating Supabase profiles.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "nodejs-mcp": "./dist/index.js"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --clean --minify",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts"
+  },
+  "keywords": ["mcp", "model-context-protocol", "supabase", "nodejs"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@supabase/supabase-js": "^2.109.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsup": "^8.5.1",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
